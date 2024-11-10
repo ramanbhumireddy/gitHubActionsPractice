@@ -12,12 +12,14 @@ jobs:
         run: echo hello build step
   build:
     name: Run build
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Make build start
         run: echo hello build step
   deploy:
     name: Run deploy
+    needs: deploy
     runs-on: ubuntu-latest
     steps:
       - name: Make build start
