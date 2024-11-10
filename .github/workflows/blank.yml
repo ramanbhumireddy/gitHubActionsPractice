@@ -4,6 +4,13 @@ on:
   workflow_dispatch:
 
 jobs:
+	
+  compile:
+    runs-on: [ubuntu-latest]
+    steps:      
+      - name: Make compile start
+        run: echo hello compile step	
+	
   build:
     runs-on: [ubuntu-latest]
     steps:      
@@ -11,7 +18,7 @@ jobs:
         run: echo hello build step
 
   deploy:
-    # needs: build
+    needs: build
     runs-on: [ubuntu-latest]
     steps:
       - name: Make deploy start
